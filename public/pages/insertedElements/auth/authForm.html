@@ -1,0 +1,26 @@
+<div id="authFormContainer" class="authFormContainer">
+    <h4 id="authTitle" style="margin: 0px; font-family: 'Montserrat'; font-weight: 500; font-size: large;"></h4>
+    <form id="authForm" class="authForm">
+        <label for="accessKeyInput" style="margin: 0px; font-size: small;">Enter email</label>
+        <div style="box-sizing: border-box; width: 260px; height: 42px; padding: 8px; border: 1.5px solid white; border-radius: 10px; display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 3px;" width="16px" height="16px" viewBox="0 0 512 512"><path fill="#ffffff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+            <input type="text" id="emailInput" class="authInput" required="true" placeholder="Email">
+        </div>
+        <label for="passwordInput" style="margin: 0px; font-size: small;">Enter password</label>
+        <div style="box-sizing: border-box; width: 260px; height: 42px; padding: 8px; border: 1.5px solid white; border-radius: 10px; display: flex; align-items: center; gap: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 4px;" width="15px" height="15px" viewBox="0 0 448 512"><path fill="#ffffff" d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>
+            <input type="password" id="passwordInput" class="authInput" required="true" placeholder="Password" autocomplete="current-password" minlength="6" maxlength="20">
+            <!-- <button id="showPasswordButton" style="background: none; border: 0px; box-sizing: border-box; width: 30px; height: 20px; padding:0px;">
+                <svg xmlns="http://www.w3.org/2000/svg" style="transform: translateY(1.5px);" width="18px" height="18px" viewBox="0 0 576 512"><path fill="#ffffff" d="M288 32C129.6 32 30 181.3 0 256c30 74.7 129.6 224 288 224s258-149.3 288-224C546 181.3 446.4 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm48 0c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-6.4 0-12.7 .6-18.8 1.8L288 256l-94.2-18.8c-1.2 6.1-1.8 12.4-1.8 18.8z"/></svg>
+            </button> -->
+        </div>
+        <div class="authSubmit" style="margin-top: 8px;">
+            <input type="submit" value="Enter" style="background: none; border: 0px; color:white; width: fit-content;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 256 512"><path fill="#ffffff" d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/></svg>
+        </div>
+    </form>
+    <button id="authActionSwitch" class="authSubmit" style="justify-content: center; width: 150px; margin-top: 10px">
+        <p id="authActionSwitchText" style="margin: 0px; padding-left: 6px; padding-right: 6px;">Continue</p>
+        <svg id="authActionSwitchIcon" xmlns="http://www.w3.org/2000/svg"  width="16px" height="16px" viewBox="0 0 512 512"><path fill="#ffffff" d="M0 224c0 17.7 14.3 32 32 32s32-14.3 32-32c0-53 43-96 96-96H320v32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9S320 19.1 320 32V64H160C71.6 64 0 135.6 0 224zm512 64c0-17.7-14.3-32-32-32s-32 14.3-32 32c0 53-43 96-96 96H192V352c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V448H352c88.4 0 160-71.6 160-160z"/></svg>
+    </button>
+</div>

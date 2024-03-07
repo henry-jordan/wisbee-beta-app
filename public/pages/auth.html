@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="#">
+  <title>wizbee</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center;">
+
+  <main style="width:fit-content; position: absolute; display: flex; flex-direction: column; gap: 8px; align-items: center;">
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <h2 id="appTitle" style="margin: 0px;">wizbee <span style="font-size: small; font-weight: 300; letter-spacing: normal;">closed beta 1</span></h2>
+    </div>
+    <div style="width: 260px; height: 2px; background-color: white; border-radius: 2px; margin-bottom: 8px;"></div>
+    <div id="accessKeyContainer" class="authFormContainer">
+      <form id="accessKeyForm" class="authForm">
+        <label for="accessKeyInput" style="margin: 0px; font-size: small;">Enter access key</label>
+        <div style="box-sizing: border-box; width: 260px; height: 42px; padding: 8px; border: 1.5px solid white; border-radius: 10px; display: flex; align-items: center; gap: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 3px;" width="16px" height="16px" viewBox="0 0 512 512"><path fill="#ffffff" d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg>
+          <input type="text" id="accessKeyInput" class="authInput" required="true" placeholder="Key">
+        </div>
+        <div class="authSubmit" style="margin-top: 8px;">
+          <input type="submit" value="Next" style="background: none; border: 0px; color:white; width: fit-content;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 256 512"><path fill="#ffffff" d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/></svg>
+        </div>
+      </form>
+      <p id="accessKeyFeedback" style="color: red;"></p>
+    </div>
+    <div id = "pageFeedbackContainer" style="display: flex; align-items: center; gap: 8px; align-self: center; display: none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 512 512"><path fill="#ffffff" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+      <p id="pageFeedback" style="font-size: smaller; margin: 0px;">Invalid password.</p>
+    </div>
+  </main>
+
+  <script src="../scripts/auth.js" type="module"></script>
+</body>
+</html>

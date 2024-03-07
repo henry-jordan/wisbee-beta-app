@@ -1,0 +1,32 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/login",
+        "destination": "/pages/auth.html"
+      },
+      {
+        "source": "/chat",
+        "destination": "/pages/main.html"
+      },
+      {
+        "source": "/chat",
+        "destination": "/home"
+      },
+      {
+        "source": "/websocketDebug",
+        "destination": "/pages/websocketDebug.html"
+      }
+    ]
+  }
+}

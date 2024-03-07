@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wizbee</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <main style="display: flex; box-sizing: border-box; height: 100%; overflow:clip;">
+        <div id="chatListContainer">
+            <button id="createChatButton" class="authSubmit" style="width: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" style="transform: translateY(-1px); overflow: hidden;" width="16px" height="16px" viewBox="0 0 512 512"><path fill="#fdfdfd" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+                <p style="margin: 0px; padding-left: 6px; padding-right: 6px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">New chat</p>
+            </button>
+            <div id="chatListDivider" style="height: 1.5px; border-radius:4px; background-color: white; width: 90%; align-self: center; margin-top:6px; margin-bottom:6px; visibility: hidden;"></div>
+            <div id="chatListButtonContainer" style="width: 100%; height: 100%; display: flex; flex-direction: column; gap: 6px"></div>
+        </div>
+        <button id="chatListToggle" class="">
+            <svg id="chatListToggleIcon" class="rotate180" xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 320 512"><path fill="#fdfdfd" d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+        </button>
+        <div id="chatContainer" style="position: relative;">
+            <div id="chatHeader" style="display:flex; box-sizing: border-box; height: 52px; width: 100%; background-color: #282828; padding: 12px; padding-left: 0px; align-items: center; gap:12px">
+                <p id="chatHeaderTitle" style="font-weight: 500; font-size: 16px; margin: 0px; margin-right: 16px; height: fit-content; display: none;"></p>
+                <button id="debugButton" class="chatHeaderButton" style="margin-left: auto; display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 512 512"><path fill="#fdfdfd" d="M256 0c53 0 96 43 96 96v3.6c0 15.7-12.7 28.4-28.4 28.4H188.4c-15.7 0-28.4-12.7-28.4-28.4V96c0-53 43-96 96-96zM39 103c9.4-9.4 24.6-9.4 33.9 0l72.4 72.4C161.3 165.7 180 160 200 160H312c20 0 38.7 5.7 54.6 15.5L439 103c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72.4 72.4C410.3 225.3 416 244 416 264h72c13.3 0 24 10.7 24 24s-10.7 24-24 24H416v8c0 27.2-6.8 52.8-18.8 75.3L473 471c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-70.9-70.9C339.3 462.5 299.7 480 256 480s-83.3-17.5-112.2-45.9L73 505c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l75.8-75.8C102.8 372.8 96 347.2 96 320v-8H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H96c0-20 5.7-38.7 15.5-54.6L39 137c-9.4-9.4-9.4-24.6 0-33.9zM144 264v56c0 53.6 37.7 98.4 88 109.4V280c0-13.3 10.7-24 24-24s24 10.7 24 24V429.4c50.3-11 88-55.8 88-109.4V264c0-30.9-25.1-56-56-56H200c-30.9 0-56 25.1-56 56z"/></svg>
+                </button>
+                <button id="logoutButton" class="authSubmit" style="justify-content: center; width: 110px; margin-left: auto;">
+                    <p style="margin: 0px; padding-left: 6px; padding-right: 6px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">Log out</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px" width="14px" height="14px" viewBox="0 0 512 512"><path fill="#ffffff" d="M505 273c9.4-9.4 9.4-24.6 0-33.9L377 111c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l87 87L184 232c-13.3 0-24 10.7-24 24s10.7 24 24 24l246.1 0-87 87c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L505 273zM168 80c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 32C39.4 32 0 71.4 0 120L0 392c0 48.6 39.4 88 88 88l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l80 0z"/></svg>
+                </button>
+            </div>
+            <div id="tempMessageContainer" style="display: none;"></div>
+            <div id="chatScroll">
+                <div id="chatLoadingScreen" style="position: absolute; width: 100%; height: 100%; background-color: #282828; z-index: 4; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; margin-right: 41px; display: none;">
+                    <svg id="loader" xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 512 512"><path class="fa-secondary" opacity=".4" fill="#fdfdfd" d="M256 64C150 64 64 150 64 256s86 192 192 192c70.1 0 131.3-37.5 164.9-93.6l.1 .1c-6.9 14.9-1.5 32.8 13 41.2c15.3 8.9 34.9 3.6 43.7-11.7c.2-.3 .4-.6 .5-.9l0 0C434.1 460.1 351.1 512 256 512C114.6 512 0 397.4 0 256S114.6 0 256 0c-17.7 0-32 14.3-32 32s14.3 32 32 32z"/><path class="fa-primary" fill="#fdfdfd" d="M224 32c0-17.7 14.3-32 32-32C397.4 0 512 114.6 512 256c0 46.6-12.5 90.4-34.3 128c-8.8 15.3-28.4 20.5-43.7 11.7s-20.5-28.4-11.7-43.7c16.3-28.2 25.7-61 25.7-96c0-106-86-192-192-192c-17.7 0-32-14.3-32-32z"/></svg>
+                </div>
+                <div id="chat"></div>
+            </div>
+            <div id="chatInputContainer">
+                <p id="pasteInputNormalizer" style="display: none;"></p>
+                <div id="chatInput" placeholder="Ask something..." contenteditable="true"></div>
+                <button id="sendMessageButton" disabled="true">
+                    <svg id="sendMessageArrow" xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 0 512 512"><path fill="#fdfdfd" d="M49.9 27.8C15.1 12.7-19.2 50.1-1.2 83.5L68.1 212.2c4.4 8.3 12.6 13.8 21.9 15c0 0 0 0 0 0l176 22c3.4 .4 6 3.3 6 6.7s-2.6 6.3-6 6.7l-176 22s0 0 0 0c-9.3 1.2-17.5 6.8-21.9 15L-1.2 428.5c-18 33.4 16.3 70.8 51.1 55.7L491.8 292.7c32.1-13.9 32.1-59.5 0-73.4L49.9 27.8z"/></svg>
+                    <div id="sendMessageSpinner" style="display:none;">
+                        <svg id="loader" xmlns="http://www.w3.org/2000/svg" style="transform: translate(-2px, 4px)" width="20px" height="20px" viewBox="0 0 512 512"><path class="fa-secondary" opacity=".4" fill="#fdfdfd" d="M256 64C150 64 64 150 64 256s86 192 192 192c70.1 0 131.3-37.5 164.9-93.6l.1 .1c-6.9 14.9-1.5 32.8 13 41.2c15.3 8.9 34.9 3.6 43.7-11.7c.2-.3 .4-.6 .5-.9l0 0C434.1 460.1 351.1 512 256 512C114.6 512 0 397.4 0 256S114.6 0 256 0c-17.7 0-32 14.3-32 32s14.3 32 32 32z"/><path class="fa-primary" fill="#fdfdfd" d="M224 32c0-17.7 14.3-32 32-32C397.4 0 512 114.6 512 256c0 46.6-12.5 90.4-34.3 128c-8.8 15.3-28.4 20.5-43.7 11.7s-20.5-28.4-11.7-43.7c16.3-28.2 25.7-61 25.7-96c0-106-86-192-192-192c-17.7 0-32-14.3-32-32z"/></svg>
+                    </div>
+                </button>
+            </div>
+            <div id="chatFooter" style="display:flex; justify-content: flex-end; width: 100%; background-color: #282828;">
+                <p style="font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 10px; margin-right: 12px; opacity: 0.5;">made by henry jordan</p>
+            </div>
+        </div>
+    </main>
+    <div id="loadingScreen" style="position: absolute; width: 100%; height: 100%; background-color: #282828; z-index: 5; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;">
+        <svg id="loader" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 512 512"><path class="fa-secondary" opacity=".4" fill="#fdfdfd" d="M256 64C150 64 64 150 64 256s86 192 192 192c70.1 0 131.3-37.5 164.9-93.6l.1 .1c-6.9 14.9-1.5 32.8 13 41.2c15.3 8.9 34.9 3.6 43.7-11.7c.2-.3 .4-.6 .5-.9l0 0C434.1 460.1 351.1 512 256 512C114.6 512 0 397.4 0 256S114.6 0 256 0c-17.7 0-32 14.3-32 32s14.3 32 32 32z"/><path class="fa-primary" fill="#fdfdfd" d="M224 32c0-17.7 14.3-32 32-32C397.4 0 512 114.6 512 256c0 46.6-12.5 90.4-34.3 128c-8.8 15.3-28.4 20.5-43.7 11.7s-20.5-28.4-11.7-43.7c16.3-28.2 25.7-61 25.7-96c0-106-86-192-192-192c-17.7 0-32-14.3-32-32z"/></svg>
+        <p style="font-family: 'Montserrat', sans-serif; width: 300px; text-align: center;">Wizbee is loading. This should only take a few seconds.</p>
+    </div>
+    <script src="../scripts/main.js" type="module"></script>
+</body>
+</html>
